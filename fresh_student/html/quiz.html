@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+  <div class="arrowHeading">
+     <a href=../index.html class="back"><i class="fa-solid fa-arrow-left"></i></a>
+    <h1 class="topHeading">Student quiz</h1>
+  </div>
+    <div class="quizContainer"></div>
+    <div class="buttons">
+        <button id="checkAnswear" class="button topBtn">Sjekk svar</button>
+        <button id="tryAgain" class="button topBtn">Prøv på nytt</button>
+    </div>
+
+    <p id="result"></p>
+    <p id="comment"></p>
+    <footer>
+        <div class="footerList">
+            <p class="footerHeading">Lenker</p>
+            <ul>
+                <li><a href="https://youtu.be/cGgLHJGyS34">Calculator - easy tutorials</a></li>
+                <li>Didrik sin undervisning</li>
+                <li>Kode 2 Cappelen Damm</a></li>
+            </ul>
+        </div>
+         <div class="footerTop">
+              <p><a href="#top" class="button topBtn">Til toppen</a></p>
+          </div>
+        <div class="footerList">
+            <p class="footerHeading">Kontakt oss</p>
+          <ul>
+            <li>Sofia Olsen</li>
+            <li>Ingrid Anne Lundem</li>
+          </ul>
+        </div>
+        <div class="footerRight">
+          <div>
+            <label for="input">Meld deg på nyhetsbrevet:</label>
+          </div>
+          <div>
+            <input type="text" id="news">
+          </div>
+          <div>
+            <button id="registrate" class="button topBtn">Registrer</button>
+            <p id="thanks"></p>
+          </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/quiz.js"></script>
+</body>
+</html>
