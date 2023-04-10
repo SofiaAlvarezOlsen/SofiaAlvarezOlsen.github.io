@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editable {
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+.editable th,
+.editable td {
+    text-align: left;
+    padding: 15px;
+}
+
+.editable thead {
+    color: #fff;
+    background: #FF7BA9;
+}
+
+.editable tbody {
+  background: #FFBED8
+}
+
+.editable td,th {
+  border: 2px solid #fff;
+}
+
+/* .editable tbody tr:nth-child(even) {
+    background: #FFBED8;
+}
+
+.editable tbody tr:nth-child(odd) {
+    background: lightgrey;
+} */
+
+.editable td.edit {
+    background: #65C18C;
+}
+
+/* Farger for utvalgte ord / ord som repeteres to eller flere ganger */
+.editable td.duplicate {
+    color: #f70101;
+}
+
+.editable td.duplicate1 {
+    color: blue;
+}
+
+.editable td.duplicate2 {
+    color: green;
+}
+
+.editable td.duplicate3 {
+    color: orange;
+}
+
+.editable td.duplicate4 {
+    color: purple;
+}
+
+.editable td.duplicate5 {
+    color: pink;
+}

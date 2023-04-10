@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/kalkulator.css">
+</head>
+<body>
+      <div class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+              <i class="fa-solid fa-book"></i>
+            </a> 
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="nav">
+            <a href="/html/startgame.html" id="topp">Spill</a>
+            <a href="/html/kalkulator.html">Kalkulator</a>
+            <a href="/html/timeplan.html">Timeplan</a>
+            <a href="/html/matoppskrifter.html">Matoppskrifter</a>
+        </nav>
+    </div>
+    <h1 class="topHeading">Kalkulator</h1>
+    
+     <div class="container">
+      <div class="kalkulator">
+          <form>
+              <div>
+                  <input type="text" name="display" class="regneFelt">
+              </div>
+              <div class="taster">
+                  <div>
+                      <input type="button" value="AC" class="bakFarge" onclick="display.value = ''">
+                      <input type="button" value="DE" class="bakFarge" onclick="display.value = display.value.toString().slice(0,-1)">
+                      <input type="button" value="." class="bakFarge" onclick="display.value += '.'">
+                      <input type="button" value="÷" class="bakFarge" onclick="display.value += '/'">
+                  </div>
+                  <div>
+                      <input type="button" value="7" onclick="display.value += '7'">
+                      <input type="button" value="8" onclick="display.value += '8'">
+                      <input type="button" value="9" onclick="display.value += '9'">
+                      <input type="button" value="x" class="bakFarge" onclick="display.value += '*'">
+                  </div>
+                  <div>
+                      <input type="button" value="4" onclick="display.value += '4'">
+                      <input type="button" value="5" onclick="display.value += '5'">
+                      <input type="button" value="6" onclick="display.value += '6'">
+                      <input type="button" value="-" class="bakFarge"onclick="display.value += '-'">
+                  </div>
+                  <div>
+                      <input type="button" value="1" onclick="display.value += '1'">
+                      <input type="button" value="2" onclick="display.value += '2'">
+                      <input type="button" value="3" onclick="display.value += '3'">
+                      <input type="button" value="+" class="bakFarge" onclick="display.value += '+'">
+                  </div>
+                  <div>
+                      <input type="button" value="00" onclick="display.value += '00'">
+                      <input type="button" value="0" onclick="display.value += '0'">
+                      <input type="button" id="erLik" class="bakFarge" value="=" onclick="display.value = eval(display.value)">
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+   <footer>
+        <div class="footerList">
+            <p class="footerHeading">Lenker</p>
+            <ul>
+                <li><a href="https://youtu.be/cGgLHJGyS34">Calculator - easy tutorials</a></li>
+                <li>Didrik sin undervisning</li>
+                <li>Kode 2 Cappelen Damm</a></li>
+            </ul>
+        </div>
+         <div class="footerTop">
+              <p><a href="#top" class="topBtn button">Til toppen</a></p>
+          </div>
+        <div class="footerList">
+            <p class="footerHeading">Kontakt oss</p>
+          <ul>
+            <li>Sofia Olsen</li>
+            <li>Ingrid Anne Lundem</li>
+          </ul>
+        </div>
+        <div class="footerRight">
+          <div>
+            <label for="input">Meld deg på nyhetsbrevet:</label>
+          </div>
+          <div>
+            <input type="text" id="news">
+          </div>
+          <div>
+            <button id="registrate" class="topBtn button">Registrer</button>
+            <p id="thanks"></p>
+          </div>
+            </div>
+        </div>
+  </footer>
+  <script src="../script/script.js"></script>
+  <script src="../script/kalkulator.js"></script>
+</body>
+</html>

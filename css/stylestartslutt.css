@@ -1,0 +1,25 @@
+
+main {
+    background-color: #FFBED8;
+    margin: 220px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    border-radius: 10px;
+  
+}
+
+.button {
+    background-color: #FF7BA9;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+main i{
+  margin: 0px 5px;
+}
