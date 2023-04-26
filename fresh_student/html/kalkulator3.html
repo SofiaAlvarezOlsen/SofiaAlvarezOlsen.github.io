@@ -33,7 +33,7 @@
         <div class="calculator">
             <form>
                 <div>
-                    <input type="text" id="display">
+                    <input type="text" id="display" class="calculate">
                 </div>
                 <div class="keys">
                     <div>
@@ -73,7 +73,7 @@
         <div class="footerList">
             <p class="footerHeading">Lenker</p>
             <ul>
-                <li><a href="kilder.html">Bildekilder</a></li>
+                <li><a href="html/kilder.html">Bildekilder</a></li>
                 <li><a href="https://youtu.be/cGgLHJGyS34">Calculator - easy tutorials</a></li>
                 <li>Didrik sin undervisning</li>
                 <li>Kode 2 Cappelen Damm</a></li>
@@ -90,21 +90,23 @@
           </ul>
         </div>
         <div class="footerRight">
-          <div>
-            <label for="input">Meld deg på nyhetsbrevet:</label>
-          </div>
-          <div>
-            <form action="https://formsubmit.co/ingridanne3009@gmail.com" method="POST">
-              <input type="email" name="email" placeholder="Email" required>
-              <button type="submit" id="registrate" class="button topBtn">Registrer</button>
-            </form>
-            <p id="thanks"></p>
-          </div>
+          <form onsubmit="sendEmail(); reset(); return; false;">
+              <div>
+              <label for="input">Meld deg på nyhetsbrevet:</label>
             </div>
+            <div>
+              <input type="text" id="news">
+            </div>
+            <div>
+              <button id="registrate" class="button topBtn">Registrer</button>
+              <p id="thanks"></p>
+            </div>
+          </form>
+          </div>
         </div>
   </footer>
     <script src="../script/script.js"></script>
-    <script src="../script/kalkulator.js"></script>
+    <script src="../script/kalkulator1.js"></script>
     
 </body>
 </html>

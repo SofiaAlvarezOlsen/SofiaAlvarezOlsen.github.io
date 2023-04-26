@@ -1,8 +1,8 @@
 /* Henter hamburgerelement */
-const burgerEl = document. querySelector('.fa-bars')
+let burgerEl = document.querySelector('.fa-bars')
 
 /* Henter navelement */
-const navEl = document. querySelector('.nav')
+let navEl = document.querySelector('.nav')
 
 burgerEl.addEventListener('click', showNav)
 
@@ -13,21 +13,12 @@ function showNav() {
 
 
 
-let newsInp = document.getElementById("news")
+//henter elementer fra DOM
 let registrateBtn = document.getElementById("registrate")
 let thanksEl = document.getElementById("thanks")
-let emails = []
-
-if (localStorage.emails) {
-  emails = localStorage.emails.split(",")
-}
 
 registrateBtn.addEventListener("click", email)
 
 function email(){
-  emails.push(newsInp.value)
-  newsInp.value = ""
   thanksEl.innerHTML="Takk for at du registrerte deg!"
-  console.log(emails)
-  localStorage.emails=emails.join(",")
 }

@@ -20,20 +20,26 @@ a{
 p, b {
   font-size: 20px;
 }
+
 .button{
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
     border: 2px solid #fff;
-    font-size:15px;
+    font-size: 15px;
     text-align: center;
 }
+
 .topHeading{
   font-size: 50px;
   font-weight: bold;
-  margin: 20px;
+  padding: 30px;
+  margin: 0px;
   text-align: center;
+  width: 100%;
+  background-color: #FFBED8;
 }
+
 /*Navbar*/
 .navbar {
     background-color: #65C18C;
@@ -66,9 +72,11 @@ p, b {
     justify-content: space-between; 
     align-items: center;
 }
+
 .fa-book{
   font-size: 25px;
 }
+
 .logo a {
     text-align: left;
     padding: 20px;
@@ -88,12 +96,18 @@ footer{
   background-color: #65C18C;
   padding: 10px 0px;
 }
+
 footer ul{
   padding: 0px;
 }
+
 footer li{
   list-style: none;
   line-height: 25px;
+}
+
+footer li a:hover{
+  color: #FFBED8;
 }
 
 .footerRight{
@@ -105,39 +119,48 @@ footer li{
 
   margin-top: 5px;
 }
+
 .topBtn{
   background-color: #FF7BA9;
   color: #fff;
 }
+
+.topBtn:hover{
+  box-shadow: rgb(129, 123, 123) 2px 1px 1px;
+}
+
 .footerHeading{
   font-size: 20px;
   margin: 5px 0px;
-
 }
+
 footer input{
   border-radius: 5px;
   padding: 5px;
   text-align: center;
 }
+
 .footerTop{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#news, #registrate{
+
+#news{
     margin: 5px;
+    color: black;
   }
 
 /*Responsivitet*/
 @media(max-width: 900px) {
     li, a, p{
-      font-size: 13px;
+      font-size: 16px;
     }
     .footerHeading{
       font-size: 17px;
     }
     }
-@media(max-width: 700px) {
+@media(max-width: 800px) {
     footer{
         flex-direction: column;
         align-items: center;

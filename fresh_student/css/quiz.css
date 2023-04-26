@@ -1,9 +1,7 @@
-body{
-    text-align: center;
-}
 .quizContainer{
     text-align: center;
 }
+
 article{
     background-color: #FFBED8;
     border-radius: 10px;
@@ -13,29 +11,78 @@ article{
     flex-direction: column;
     align-items: center;
 }
+
 .fa-arrow-left{
   font-style: 50px;
   padding: 5px;
   color: #fff;
   text-align: center;
 }
+
 .back{
   width: 60px;
   height: 60px;
   background-color: #FF7BA9;
   border-radius: 50%;
-  margin: 20px;
-  
+  margin: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .arrowHeading{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  margin-bottom: 100px;
 }
+
 .arrowHeading h1{
   display: flex;
   justify-content: center;
+}
+
+.buttons{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+
+  margin: 50px auto;
+}
+
+#bigBoxStart{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  padding: 120px;
+  background-color: #FFBED8;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.resAndCom{
+  text-align: center;
+  margin: auto auto;
+  margin-bottom: 200px;
+  background-color: #FFBED8;
+  border-radius: 10px;
+  width: 400px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer{
+  margin-top: 400px;
 }

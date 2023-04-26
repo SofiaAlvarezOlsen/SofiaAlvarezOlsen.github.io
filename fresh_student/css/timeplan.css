@@ -11,6 +11,7 @@ main {
 .editable {
     border-collapse: collapse;
     margin: 20px;
+    margin-bottom: 50px;
 }
 
 .editable th,

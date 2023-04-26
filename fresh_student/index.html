@@ -26,7 +26,7 @@
         </div>
         <nav class="nav">
             <a href="./html/startgame.html" id="topp">Spill</a>
-            <a href="./html/kalkulator.html">Kalkulator</a>
+            <a href="./html/kalkulator3.html">Kalkulator</a>
             <a href="./html/timeplan.html">Timeplan</a>
             <a href="./html/matoppskrifter.html">Matoppskrifter</a>
         </nav>
@@ -40,19 +40,26 @@
             </div>
         </div>
     </header>
-  
-    <div class="quiz_box">
+  <div class="index_boxes">
+    <div class="index_box info_box">
+      <p>
+        Studietiden er en spennende men tøff tid! Derfor har vi lagd en nettside for å forbrede oss best mulig til studietiden. For å hjelpe andre har vi valgt å dele den siden med alle som også føler seg litt lost i studietiden! Lykke til med bruk av nettsiden og studietiden!
+      </p>
+    </div>
+    <div class="index_box quiz_box">
       <p>
         Prøv quizen vår da vel!
       </p>
       <a href="./html/quiz.html" class="button">Quiz</a>
     </div>
+  </div>
 
   
   <footer>
         <div class="footerList">
             <p class="footerHeading">Lenker</p>
             <ul>
+                <li><a href="kilder.html">Bildekilder</a></li>
                 <li><a href="https://youtu.be/cGgLHJGyS34">Calculator - easy tutorials</a></li>
                 <li>Didrik sin undervisning</li>
                 <li>Kode 2 Cappelen Damm</a></li>
@@ -64,8 +71,8 @@
         <div class="footerList">
             <p class="footerHeading">Kontakt oss</p>
           <ul>
-            <li>Sofia Olsen alias IA</li>
-            <li>Ingrid Anne Lundem </li>
+            <li><i class="fa-regular fa-envelope"></i> sofilofiolsen@gmail.com </li>
+            <li><i class="fa-regular fa-envelope"></i> ingridanne3009@gmail.com</li>
           </ul>
         </div>
         <div class="footerRight">
@@ -73,10 +80,10 @@
             <label for="input">Meld deg på nyhetsbrevet:</label>
           </div>
           <div>
-            <input type="text" id="news">
-          </div>
-          <div>
-            <button id="registrate" class="button topBtn">Registrer</button>
+            <form action="https://formsubmit.co/ingridanne3009@gmail.com" method="POST">
+              <input type="email" name="email" placeholder="Email" required>
+              <button type="submit" id="registrate" class="button topBtn">Registrer</button>
+            </form>
             <p id="thanks"></p>
           </div>
             </div>
@@ -85,6 +92,7 @@
 
 <!--JavaScript til hamburgermeny-->
 <script src="./script/script.js"></script>
-  
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="../script/script.js"></script>
 </body>
 </html>

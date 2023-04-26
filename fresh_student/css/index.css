@@ -2,40 +2,50 @@
   color: #fff;
 }
 
-
 .header {
     color: #fff;
     min-height: 350px;
-    background-image: url("https://cdn.pixabay.com/photo/2017/01/12/10/40/school-1974369_1280.jpg");
+    background-image: url("https://forrit-one-msedu-p1-consumables.azureedge.net/media/cdb40e3e-46a0-43b7-b919-676ccf473635/EDU_1600x600_PPTscreen.jpg");
+    object-fit: cover;
+    background-repeat: no-repeat;
     display: flex;
-    /* align-items: center;
-    justify-content: space-around; */
     padding: 20px 30px;
 }
 
 .header h1 {
   font-size: 70px;
+  color: #FF7BA9;
 }
 
 .header p {
   font-size: 25px;
+  color: #FF7BA9;
 }
 
 img {
     max-width: 100%;
 }
 
-.quiz_box{
-  margin: 90px auto;
+.index_boxes{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.index_box{
   background-color: #FFBED8;
   border-radius: 10px;
-  width: 300px;
   height: 200px;
+  margin: 90px auto;
+  width: 45vw;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.index_box p{
+  margin: 10px;
 }
 
 .quiz_box a{
@@ -46,19 +56,36 @@ img {
   border-radius: 10px;
   text-align: center;
 }
+.quiz_box a:hover{
+  box-shadow: 2px 1px 1px #FF7BA9;
+}
 
 /*Responsivitet*/
+@media(max-width: 1200px) {
+    .index_boxes{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+   }
+    .info_box{
+      margin-bottom: 0px;
+    }
+    }
 @media(max-width: 900px) {
     .container {
       flex-direction: column;
     }
+    .index_box{
+      width: 70%;
+    }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 380px) {
  h2{
    font-size: 15px;
  }
   p{
-    font-size: 10px;
-   }
+    font-size: 14px;
+  }
 }

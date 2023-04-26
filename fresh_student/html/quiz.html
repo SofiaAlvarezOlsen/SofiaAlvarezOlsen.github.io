@@ -16,21 +16,29 @@
 </head>
 <body>
   <div class="arrowHeading">
-     <a href=../index.html class="back"><i class="fa-solid fa-arrow-left"></i></a>
-    <h1 class="topHeading">Student quiz</h1>
+      <h1 class="topHeading">Student quiz</h1>
+      <a href=../index.html class="back"><i class="fa-solid fa-arrow-left"></i></a>
   </div>
     <div class="quizContainer"></div>
+      <div class="center">
+        <div id="bigBoxStart">
+        <button id="start" class="button topBtn">START</button>
+      </div>
+      <button id="next" class="button topBtn hidden">Neste spørsmål</button>
+      </div>
     <div class="buttons">
-        <button id="checkAnswear" class="button topBtn">Sjekk svar</button>
-        <button id="tryAgain" class="button topBtn">Prøv på nytt</button>
+        <button id="checkAnswear" class="button topBtn hidden">Sjekk svar</button>
+        <button id="tryAgain" class="button topBtn hidden">Prøv på nytt</button>
     </div>
-
-    <p id="result"></p>
-    <p id="comment"></p>
+    <div class="outcome">
+      <p id="result"></p>
+      <p id="comment"></p>
+    </div>
     <footer>
         <div class="footerList">
             <p class="footerHeading">Lenker</p>
             <ul>
+                <li><a href="kilder.html">Bildekilder</a></li>
                 <li><a href="https://youtu.be/cGgLHJGyS34">Calculator - easy tutorials</a></li>
                 <li>Didrik sin undervisning</li>
                 <li>Kode 2 Cappelen Damm</a></li>
@@ -42,8 +50,8 @@
         <div class="footerList">
             <p class="footerHeading">Kontakt oss</p>
           <ul>
-            <li>Sofia Olsen</li>
-            <li>Ingrid Anne Lundem</li>
+            <li><i class="fa-regular fa-envelope"></i> sofilofiolsen@gmail.com </li>
+            <li><i class="fa-regular fa-envelope"></i> ingridanne3009@gmail.com</li>
           </ul>
         </div>
         <div class="footerRight">
@@ -51,15 +59,16 @@
             <label for="input">Meld deg på nyhetsbrevet:</label>
           </div>
           <div>
-            <input type="text" id="news">
-          </div>
-          <div>
-            <button id="registrate" class="button topBtn">Registrer</button>
+            <form action="https://formsubmit.co/ingridanne3009@gmail.com" method="POST">
+              <input type="email" name="email" placeholder="Email" required>
+              <button type="submit" id="registrate" class="button topBtn">Registrer</button>
+            </form>
             <p id="thanks"></p>
           </div>
             </div>
         </div>
     </footer>
+    <script src="../script/script.js"></script>
     <script src="../script/quiz.js"></script>
 </body>
 </html>

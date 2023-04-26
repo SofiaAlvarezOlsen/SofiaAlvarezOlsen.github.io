@@ -1,8 +1,13 @@
+//henter elementer fra DOM
 let quizContainerEl = document.querySelector('.quizContainer')
-let checkAnswearEl = document.querySelector('#checkAnswear')
+let checkAnswearBtn = document.querySelector('#checkAnswear')
 let resultEL = document.querySelector('#result')
 let commentEL = document.querySelector('#comment')
-let tryAgainEl = document.querySelector('#tryAgain')
+let tryAgainBtn = document.querySelector('#tryAgain')
+let nextBtn = document.querySelector("#next")
+let startBtn = document.querySelector("#start")
+let outcomeEl = document.querySelector(".outcome")
+let bigBoxStartEl = document.querySelector("#bigBoxStart")
 
 let question1 = {
     question: "Hvor mange universiteter og høyskoler finnes det til sammen i Norge?",
@@ -20,7 +25,7 @@ let question3 = {
     solution: "830kr"
 }
 let question4 = {
-    question: "Hvilket studie eksisterer ikke?",
+    question: "Hva går det ikke ann å studere?",
     options: ["David Beckham", "Stunt-skuespill", "Cannabis-kultivasjon", "Gjenkjenning av falske merker"],
     solution: "Gjenkjenning av falske merker"
 }
@@ -35,7 +40,7 @@ let question6 = {
     solution: "1813"
 }
 let question7 = {
-    question: "Ifølge <i>The center of world rankings</i> hvilket universitet regnes som det beste verdenen?",
+    question: "Ifølge <i>The center of world rankings</i> hvilket universitet regnes som det beste i verdenen?",
     options: ["University of Oxford", "Harvard University", "Stanford University", "Yale University"],
     solution: "Harvard University"
 }
@@ -50,28 +55,40 @@ let question9 = {
     solution: "Snapchat"
 }
 let question10 = {
-    question: "Hvilke studier tropper flest ut av?",
+    question: "Hvilket studie dropper flest ut av?",
     options: ["Økonomi og administrasjonsfag", "Humanistiske og estetiske fag", "Sykepleie", "Ingeniørfag"],
     solution: "Økonomi og administrasjonsfag"
 }
 
 let quiz = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10]
 
+startBtn.addEventListener('click', startQuiz)
+nextBtn.addEventListener('click', nextQuestion)
+
+function startQuiz(){
+    nextQuestion()
+    nextBtn.classList.remove("hidden")
+    startBtn.classList.add("hidden")
+    bigBoxStartEl.classList.add("hidden")
+    centerBtns.classList.remove("startQuiz")
+}
 
 //Går gjennom spørsmålene
-for(let i = 0; i < quiz.length; i++){
+let i=0
+function nextQuestion(){
+    checkPoints()
 
     //Henter spørsmålet
     let question = quiz[i].question
 
-    //Henter stpørsmålene
+    //Henter svaralternativene
     let options = quiz[i].options
 
     //Henter fasiten
     let solution = quiz[i].solution
 
     //Fyller quiz-containeren med spørsmålene
-    quizContainerEl.innerHTML += `
+    quizContainerEl.innerHTML = `
     <article id="question${i+1}">
     <h3>${question}</h3>
     </article>
@@ -95,10 +112,10 @@ for(let i = 0; i < quiz.length; i++){
         radioEl.name = `q${i + 1}`
 
         if (options[j] == solution){
-        radioEl.value = "c" //correct
+        radioEl.value = "candy" //correct
         }
         else{
-            radioEl.value = "w" //wrong
+            radioEl.value = "worm" //wrong
         }
 
         //Legger input-elementet med type radio i label elementet
@@ -110,27 +127,43 @@ for(let i = 0; i < quiz.length; i++){
         //legger label elementet inni question elementet
         questionEl.appendChild(labelEL)
     }
+    i = i+1
+    if (i>=quiz.length){
+        tryAgainBtn.classList.remove("hidden")
+        checkAnswearBtn.classList.remove("hidden")
+        nextBtn.classList.add("hidden")
+    }
 }
-//Legger en lytter til knappen som sjekker svar
-checkAnswearEl.addEventListener('click', findPoints)
 
-//funksjon som finner antall poeng baset på antall rett
-function findPoints (){
+let points = 0
 
-    let points = 0
+//sjekker antall riktige poeng
+function checkPoints(){
     //henter radio-elemtene
-    let radioEls = document.querySelectorAll('input')
+    let radioEls = document.querySelectorAll('input[type="radio"]')
+    console.log(radioEls)
 
     //går gjennom alle radio-elementene
     for (let i = 0; i<radioEls.length; i++){
         //sjekker om et alternativ er krysset av
         if(radioEls[i].checked){
-            if(radioEls[i].value == "c"){
+            console.log(radioEls[i].value == "candy")
+            if(radioEls[i].value == "candy"){
                 //øker antall poeng
                 points++
             }
         }
     }
+}
+
+//Legger en lytter til knappen som sjekker svar
+checkAnswearBtn.addEventListener('click', findPoints)
+
+//finner hvor mange poeng resultatene fører til
+function findPoints (){
+    //legger til en klasse for å bedre utseende på nettsiden
+    outcomeEl.classList.add("resAndCom")
+  
     //sjekket om et alternativ er trykket av
     resultEL.innerHTML= `Du fikk ${points}/${quiz.length} poeng.`
 
@@ -142,12 +175,13 @@ function findPoints (){
     }
     else{
         commentEL.innerHTML = `Dette så ikke veldig lyst ut, men det gjør hvertfall fremtiden din:)`
-    }
+    } 
 }
 
-tryAgainEl.addEventListener('click', refresh)
+tryAgainBtn.addEventListener('click', refresh)
 
 function refresh(){
     location.reload()
 }
+
 
