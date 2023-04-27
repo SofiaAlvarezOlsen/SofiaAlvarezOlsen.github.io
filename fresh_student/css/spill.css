@@ -59,3 +59,8 @@ img {
     /* width: auto;
     max-height: 100%; */
 }
+
+#arrowKeys {
+    display: flex;
+    flex-direction: row;
+}

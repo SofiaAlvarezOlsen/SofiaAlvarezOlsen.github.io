@@ -49,6 +49,12 @@ function moveBasketRight() {
     }
 }
 
+let leftArrowBtn = document.getElementById("left")
+let rightArrowBtn = document.getElementById("right")
+
+leftArrowBtn.addEventListener('click', moveBasketLeft)
+rightArrowBtn.addEventListener('click', moveBasketRight)
+
 function control(e){
     if (e.key == "ArrowLeft") {
         moveBasketLeft()
