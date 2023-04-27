@@ -25,7 +25,7 @@ var score = 0
 var pixelsPrMove = 25
 
 // Array for bilder av dyr og billig mat
-let filePathToPictureCheapFood = ["../bilder/pepsi.PNG", "../bilder/banan.png", "../bilder/norwegia.PNG", "../bilder/idun.PNG", "../bilder/oldelpaso20.jpg", "../bilder/grandiosa.JPG", "../bilder/sørlandschips.PNG", "../bilder/ovnsbakt.PNG", "../bilder/oreo.PNG", "../bilder/agurk.PNG", "../bilder/torsk.PNG", "../bilder/gulrot.PNG", "../bilder/nordfjord.PNG", "../bilder/sopps.PNG", "../bilder/nidar.PNG"]
+let filePathToPictureCheapFood = ["../bilder/pepsi.PNG", "../bilder/banan.png", "../bilder/norwegia.PNG", "../bilder/idun.PNG", "../bilder/oldelpaso.PNG", "../bilder/grandiosa.JPG", "../bilder/sørlandschips.PNG", "../bilder/ovnsbakt.PNG", "../bilder/oreo.PNG", "../bilder/agurk.PNG", "../bilder/torsk.PNG", "../bilder/gulrot.PNG", "../bilder/nordfjord.PNG", "../bilder/sopps.PNG", "../bilder/nidar.PNG"]
 let filePathToPictureExpensiveFood =    ["../bilder/cola.PNG",  "../bilder/eple.PNG", "../bilder/jarlsberg.PNG", "../bilder/heinz.PNG", "../bilder/santamaria.PNG", "../bilder/bigone.PNG", "../bilder/maarud.PNG", "../bilder/stabburet.PNG", "../bilder/safari.PNG", "../bilder/paprika.PNG", "../bilder/laks.PNG", "../bilder/sukkererter.PNG", "../bilder/gilde.PNG", "../bilder/barilla.PNG", "../bilder/freia.PNG"]
 
 function moveBasketLeft() {
