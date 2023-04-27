@@ -20,7 +20,7 @@ let gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue("height
 /* let foodWidth = parseInt(window.getComputedStyle(food).getPropertyValue("width"))
 let foodHeight = parseInt(window.getComputedStyle(food).getPropertyVFalue("height")) */
 
-//Definerer .....
+//Definerer 
 var score = 0
 var pixelsPrMove = 25
 
