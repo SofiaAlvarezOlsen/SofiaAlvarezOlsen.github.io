@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-evenly;
 
-  margin: 80px auto;
+  margin: 100px auto;
 }
 
 .sources_boxes div{
@@ -16,6 +16,15 @@
 
 .sources_boxes div ul li a:hover{
   color: #FF7BA9;
+}
+
+.sources_boxes div ul{
+  padding: 0;
+}
+
+.sources_boxes div ul li{
+  list-style: none;
+  margin-top: 10px;
 }
 
 main p{

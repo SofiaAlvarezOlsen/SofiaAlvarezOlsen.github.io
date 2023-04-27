@@ -8,6 +8,7 @@ main {
     justify-content: center;
     width: 40%;
     border-radius: 10px;
+    text-align: center;
 }
 
 .button {

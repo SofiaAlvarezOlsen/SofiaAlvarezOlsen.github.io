@@ -33,6 +33,7 @@ h3{
     padding: 5px;
     border-radius: 10px;
     margin-top: 0px;
+    color: white;
 }
 
 .websites .website img:hover{
@@ -96,7 +97,12 @@ img{
     }
     .website{
       width: 80%;
+    }
 
+}
+@media(max-width: 500px) {
+    .topHeading{
+      font-size: 35px;
     }
 
 }

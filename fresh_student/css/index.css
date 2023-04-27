@@ -12,14 +12,16 @@
     padding: 20px 30px;
 }
 
+.header h1, .header p {
+  color: #FF7BA9;
+  text-shadow: 0 0 3px white;
+}
 .header h1 {
   font-size: 70px;
-  color: #FF7BA9;
 }
 
 .header p {
   font-size: 25px;
-  color: #FF7BA9;
 }
 
 img {
@@ -45,7 +47,7 @@ img {
 }
 
 .index_box p{
-  margin: 10px;
+  margin: 10px 30px;
 }
 
 .quiz_box a{

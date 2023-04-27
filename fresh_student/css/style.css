@@ -40,6 +40,15 @@ p, b {
   background-color: #FFBED8;
 }
 
+.pinkBox{
+  text-align: center;
+  margin: 40px auto;
+  background-color: #FFBED8;
+  border-radius: 10px;
+  width: 80%;
+  padding: 20px;
+}
+
 /*Navbar*/
 .navbar {
     background-color: #65C18C;
