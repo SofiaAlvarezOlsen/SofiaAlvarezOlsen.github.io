@@ -1,4 +1,4 @@
-let heartEls = document.querySelectorAll('.fa-heart')
+/* let heartEls = document.querySelectorAll('.fa-heart')
 
 for(let i=0; i<heartEls.length; i++){
     heartEls[i].addEventListener("click", changeHeart)
@@ -66,4 +66,33 @@ function saveStoredValues(hearts) {
     // stringify - gjør om til JSON
     localStorage.setItem("savedHearts", JSON.stringify(savedHearts))
     console.log("json stored " + JSON.parse(localStorage.getItem("savedHearts")));
+}
+ */
+
+// Hent hjerter fra DOM
+let heartEls = document.querySelectorAll(".fa-heart")
+heartEls.forEach(function(heartEl) {
+  
+heartEl.addEventListener("click", function() {
+
+  // Sjekk hvilken klasse hjertet har
+  if (heartEl.classList.contains("fa-regular")) {
+      heartEl.classList.remove("fa-regular")
+      heartEl.classList.add("fa-solid")
+      localStorage.setItem(hearts, "solid")
+      } 
+  else {
+      heartEl.classList.remove("fa-solid")
+      heartEl.classList.add("fa-regular")
+      localStorage.removeItem(hearts)
+      }
+  })
+  })
+
+// Sjekker om det er lagret klasser i localstorage
+for (let i = 0; i < heartEls.length; i++) {
+  if (localStorage.getItem("heart" + i) == "solid") {
+  document.getElementById("heart" + i).classList.remove("fa-regular")
+  document.getElementById("heart" + i).classList.add("fa-solid")
+  }
 }
