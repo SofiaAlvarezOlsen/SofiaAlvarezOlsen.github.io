@@ -147,4 +147,5 @@ if (window.innerWidth < 500) {
     console.log("hola")
     phoneSize = document.getElementById("phoneSize")
     phoneSize.innerHTML = "Tilt mobilen 90 grader for å bruke på mobil."
+    console.log("test")
 }
