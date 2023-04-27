@@ -18,7 +18,7 @@ let basketHeight = parseInt(window.getComputedStyle(basket).getPropertyValue("he
 let gameWidth = parseInt(window.getComputedStyle(game).getPropertyValue("width"))
 let gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue("height")) */
 /* let foodWidth = parseInt(window.getComputedStyle(food).getPropertyValue("width"))
-let foodHeight = parseInt(window.getComputedStyle(food).getPropertyValue("height")) */
+let foodHeight = parseInt(window.getComputedStyle(food).getPropertyVFalue("height")) */
 
 //Definerer .....
 var score = 0
