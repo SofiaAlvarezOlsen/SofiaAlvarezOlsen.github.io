@@ -76,28 +76,6 @@ function markDuplicateText() {
     }
 }
 
-/* function markDuplicateText() {
-    let cells = document.querySelectorAll(".editable td")
-    for (let cell of cells) {
-        if (cell.innerHTML > "") {
-            let count = 0;
-            for (let otherCell of cells) {
-                if (cell.innerHTML == otherCell.innerHTML) {
-                    count++;
-                }
-            }
-            if (count > 1) {
-                cell.classList.add("duplicate");
-                console.log(cell.innerHTML)
-            } else {
-                cell.classList.remove("duplicate");
-            }
-        } else {
-            cell.classList.remove("duplicate")
-        }
-    }
-} */
-
 // Kilde til inspirasjon for tabell: https://code-boxx.com/editable-html-table/
 
 // objekt - kolon brukes til å definere variabler 
@@ -160,4 +138,13 @@ var editable = {
             }
         }
     }
-};
+}
+
+let phoneSize
+
+
+if (window.innerWidth < 500) {
+    console.log("hola")
+    phoneSize = document.getElementById("phoneSize")
+    phoneSize.innerHTML = "Tilt mobilen 90 grader for å bruke på mobil."
+}
