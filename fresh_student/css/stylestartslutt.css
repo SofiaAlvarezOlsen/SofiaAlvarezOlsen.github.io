@@ -1,6 +1,11 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
 main {
     background-color: #FFBED8;
-    margin: 220px auto;
+    margin: 40% auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
