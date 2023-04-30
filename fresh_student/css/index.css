@@ -83,7 +83,7 @@ img {
     }
 }
 
-@media(max-width: 380px) {
+@media(max-width: 450px) {
  h2{
    font-size: 15px;
  }
