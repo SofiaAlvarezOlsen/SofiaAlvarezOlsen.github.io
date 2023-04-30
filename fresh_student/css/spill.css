@@ -22,7 +22,6 @@ h1, h2, h3 {
     height: 500px;
     background-image: url("https://cdn.pixabay.com/photo/2014/04/03/11/57/valley-312709_1280.png");
     background-size: cover;
-    /* background-color: lightgreen; */
     position: relative;
 }
 
@@ -63,6 +62,7 @@ img {
     flex-direction: row;
 }
 
+/*Responsivitet*/
 @media(max-width: 1000px) {
     .game {
         width: 100%;

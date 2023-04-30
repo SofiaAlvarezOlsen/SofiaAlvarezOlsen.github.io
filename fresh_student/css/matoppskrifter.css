@@ -88,6 +88,7 @@ img{
     grid-column: span 4;
 }
 
+/*Responsivitet*/
 @media(max-width: 1000px) {
     .websites{
       display: flex;

@@ -4,21 +4,41 @@ var basket = document.querySelector(".basket")
 var foods = document.querySelector(".foods")
 
 //Henter style
-var basketBottom = 15
+/* let basketBottom = 15
 let basketWidth = 100
 let basketHeight = 90
 let gameWidth = 700
 let gameHeight = 500
 let foodWidth = 50
-let foodHeight = 50
-var basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"))
+let foodHeight = 50 */
+
+/* analyserer verdien til basket og returnerer et heltall */
+let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"))
+
+/* let basketBottom = parseInt(window.getComputedStyle(document.querySelector('.basket')).width)
+let basketWidth = parseInt(window.getComputedStyle(document.querySelector('.basket')).bottom)
+let basketHeight = parseInt(window.getComputedStyle(document.querySelector('.basket')).height)
+let gameWidth = parseInt(window.getComputedStyle(document.querySelector('.game')).width)
+let gameHeight = parseInt(window.getComputedStyle(document.querySelector('.game')).height)
+let foodWidth = parseInt(window.getComputedStyle(document.querySelector('.game')).width)
+let foodHeight = parseInt(window.getComputedStyle(document.querySelector('.game')).height) */
+
+/* console.log(basketBottom)
+console.log(basketWidth)
+console.log(basketHeight)
+console.log(gameWidth)
+console.log(gameHeight)
+console.log(foodWidth)
+console.log(foodHeight) */
+
 /* var basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"))
 let basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"))
 let basketHeight = parseInt(window.getComputedStyle(basket).getPropertyValue("height"))
 let gameWidth = parseInt(window.getComputedStyle(game).getPropertyValue("width"))
-let gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue("height")) */
-/* let foodWidth = parseInt(window.getComputedStyle(food).getPropertyValue("width"))
+let gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue("height"))
+let foodWidth = parseInt(window.getComputedStyle(food).getPropertyValue("width"))
 let foodHeight = parseInt(window.getComputedStyle(food).getPropertyVFalue("height")) */
+
 
 //Definerer 
 var score = 0
@@ -83,15 +103,15 @@ class Food {
 
 
 function createFood(){
-    /* Setter random horisontal plass for maten */
+    /* Setter random horisontal plass for maten (random lengde fra venstre siden) */
     var leftCheapFood = Math.floor(Math.random()*(gameWidth-foodWidth))
     var leftExpensiveFood = Math.floor(Math.random()*(gameWidth-foodWidth))
     var minimumSeparationBetweenFoods = 100
 
     /* sikrer at maten ikke kommer for tett inntil hverandre */
     while (Math.abs(leftCheapFood - leftExpensiveFood) < minimumSeparationBetweenFoods ){
-        leftCheapFood = Math.floor(Math.random()*670)
-        leftExpensiveFood = Math.floor(Math.random()*670)
+        leftCheapFood = Math.floor(Math.random()*(gameWidth-foodWidth))
+        leftExpensiveFood = Math.floor(Math.random()*(gameWidth-foodWidth))
     }
 
     var pictureIndex = Math.floor(Math.random()*filePathToPictureCheapFood.length)

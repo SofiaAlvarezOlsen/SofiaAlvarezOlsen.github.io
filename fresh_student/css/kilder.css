@@ -36,6 +36,7 @@ main p{
   margin: 70px auto;
 }
 
+/*Responsivitet*/
 @media(max-width: 700px) {
     .sources_boxes{
       flex-direction: column;

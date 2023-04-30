@@ -1,11 +1,7 @@
-body {
-    width: 100vw;
-    height: 100vh;
-}
 
 main {
     background-color: #FFBED8;
-    margin: 40% auto;
+    margin: 10% auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -27,4 +23,11 @@ a {
 
 main i{
   margin: 0px 5px;
+}
+
+/*Responsivitet*/
+@media(max-width: 500px) {
+    main {
+        width: 100%;
+    }
 }
