@@ -4,13 +4,13 @@ var basket = document.querySelector(".basket")
 var foods = document.querySelector(".foods")
 
 //Henter style
-/* let basketBottom = 15
+let basketBottom = 15
 let basketWidth = 100
 let basketHeight = 90
 let gameWidth = 700
 let gameHeight = 500
 let foodWidth = 50
-let foodHeight = 50 */
+let foodHeight = 50
 
 /* analyserer verdien til basket og returnerer et heltall */
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"))
