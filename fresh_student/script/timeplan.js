@@ -1,4 +1,4 @@
-// lambda expression - funskjon uten navn som kalles når eventen skjer
+// lambda expression - funskjon uten navn som kalles når "DOMContentLoaded"
 window.addEventListener("DOMContentLoaded", () => {
     loadStoredValues()
     markDuplicateText()
@@ -59,6 +59,8 @@ function markDuplicateText() {
                 cell.classList.add("duplicate4")
             } else if (cell.innerHTML.toLowerCase() == "jobb") {
                 cell.classList.add("duplicate5")
+            } else if (cell.innerHTML.toLowerCase() == "informasjonsteknologi" || cell.innerHTML.toLowerCase() == "it") {
+                cell.classList.add("duplicate6")
             } else if (count > 1) {
                 cell.classList.add("duplicate");
                 console.log(cell.innerHTML)
@@ -146,4 +148,13 @@ let phoneSize
 if (window.innerWidth < 500) {
     phoneSize = document.getElementById("phoneSize")
     phoneSize.innerHTML = "Tilt mobilen 90 grader for å bruke på mobil."
+
+    document.getElementById("tid").innerHTML = "tid"
+    document.getElementById("man").innerHTML = "man"
+    document.getElementById("tir").innerHTML = "tir"
+    document.getElementById("ons").innerHTML = "ons"
+    document.getElementById("tor").innerHTML = "tor"
+    document.getElementById("fre").innerHTML = "fre"
+    document.getElementById("lor").innerHTML = "lør"
+    document.getElementById("son").innerHTML = "søn"
 }

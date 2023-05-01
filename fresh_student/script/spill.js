@@ -150,11 +150,11 @@ function createFood(){
     
     var fallIntervalCheap = setInterval(fallDownFood, 100, cheapFood)
     var fallIntervalExpensive = setInterval(fallDownFood, 100, expensiveFood)
-    var foodSpawner = setTimeout(createFood, 2000)
+    setTimeout(createFood, 2000)
     
 } 
 createFood()
 
 
-
+// Setter en lytter til tastaturet som kaller på funksjonen control
 document.addEventListener("keydown", control)

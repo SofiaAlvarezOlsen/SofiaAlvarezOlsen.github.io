@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+/* body {
+    min-width: 1000px;
+} */
+
 main {
     display: flex;
     flex-direction: column;
@@ -60,4 +64,18 @@ main {
 
 .editable td.duplicate5 {
     color: pink;
+}
+
+.editable td.duplicate6 {
+    color: lightseagreen;
+}
+
+/*Responsivitet*/
+@media(max-width: 500px) {
+    .editable th,
+    .editable td {
+    text-align: left;
+    padding: 5px;
+    font-size: 10px;
+}
 }
