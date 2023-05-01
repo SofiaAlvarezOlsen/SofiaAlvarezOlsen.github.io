@@ -4,40 +4,27 @@ var basket = document.querySelector(".basket")
 var foods = document.querySelector(".foods")
 
 //Henter style
-let basketBottom = 15
-let basketWidth = 100
-let basketHeight = 90
-let gameWidth = 700
-let gameHeight = 500
+
 let foodWidth = 50
 let foodHeight = 50
+/* let foodWidth = parseInt(window.getComputedStyle(document.querySelector('.food')).width)
+let foodHeight = parseInt(window.getComputedStyle(document.querySelector('.food')).height) */
 
-/* analyserer verdien til basket og returnerer et heltall */
+/* analyserer verdien og returnerer et heltall */
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"))
-
-/* let basketBottom = parseInt(window.getComputedStyle(document.querySelector('.basket')).width)
-let basketWidth = parseInt(window.getComputedStyle(document.querySelector('.basket')).bottom)
+let basketBottom = parseInt(window.getComputedStyle(document.querySelector('.basket')).bottom)
+let basketWidth = parseInt(window.getComputedStyle(document.querySelector('.basket')).width)
 let basketHeight = parseInt(window.getComputedStyle(document.querySelector('.basket')).height)
 let gameWidth = parseInt(window.getComputedStyle(document.querySelector('.game')).width)
 let gameHeight = parseInt(window.getComputedStyle(document.querySelector('.game')).height)
-let foodWidth = parseInt(window.getComputedStyle(document.querySelector('.game')).width)
-let foodHeight = parseInt(window.getComputedStyle(document.querySelector('.game')).height) */
 
-/* console.log(basketBottom)
-console.log(basketWidth)
-console.log(basketHeight)
-console.log(gameWidth)
-console.log(gameHeight)
-console.log(foodWidth)
-console.log(foodHeight) */
-
-/* var basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"))
-let basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"))
-let basketHeight = parseInt(window.getComputedStyle(basket).getPropertyValue("height"))
-let gameWidth = parseInt(window.getComputedStyle(game).getPropertyValue("width"))
-let gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue("height"))
-let foodWidth = parseInt(window.getComputedStyle(food).getPropertyValue("width"))
-let foodHeight = parseInt(window.getComputedStyle(food).getPropertyVFalue("height")) */
+/* console.log("foodWidth" +  foodWidth)
+console.log("foodHeight" +  foodHeight)
+console.log("basketBottom" + basketBottom)
+console.log("basketWidth" +  basketWidth)
+console.log("basketHeight" +  basketHeight)
+console.log("gameWidth" +  gameWidth)
+console.log("gameHeight" +  gameHeight) */
 
 
 //Definerer 
