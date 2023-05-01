@@ -24,16 +24,12 @@ console.log("basketHeight" +  basketHeight)
 console.log("gameWidth" +  gameWidth)
 console.log("gameHeight" +  gameHeight) */
 
-
-//Definerer 
-var score = 0
-var pixelsPrMove = 25
-
 // Array for bilder av dyr og billig mat
 let filePathToPictureCheapFood = ["../bilder/pepsi.PNG", "../bilder/banan.png", "../bilder/norwegia.PNG", "../bilder/idun.PNG", "../bilder/oldelpaso.PNG", "../bilder/grandiosa.JPG", "../bilder/sørlandschips.PNG", "../bilder/ovnsbakt.PNG", "../bilder/oreo.PNG", "../bilder/agurk.PNG", "../bilder/torsk.PNG", "../bilder/gulrot.PNG", "../bilder/nordfjord.PNG", "../bilder/sopps.PNG", "../bilder/nidar.PNG"]
 let filePathToPictureExpensiveFood = ["../bilder/cola.PNG",  "../bilder/eple.PNG", "../bilder/jarlsberg.PNG", "../bilder/heinz.PNG", "../bilder/santamaria.PNG", "../bilder/bigone.PNG", "../bilder/maarud.PNG", "../bilder/stabburet.PNG", "../bilder/safari.PNG", "../bilder/paprika.PNG", "../bilder/laks.PNG", "../bilder/sukkererter.PNG", "../bilder/gilde.PNG", "../bilder/barilla.PNG", "../bilder/freia.PNG"]
 
 // Hvis avstanden mellom kurven og vestre-veggen er større enn null skal kurven flyttes mot venstre
+var pixelsPrMove = 25
 function moveBasketLeft() {
     if (basketLeft > 0) {
         // Hvis avstanden mellom kurven og vestre-veggen er større enn "pixelsPrMove" skal kurven flyttes mot venstre "pixelsPrMove"
@@ -60,14 +56,6 @@ function moveBasketRight() {
     }
 }
 
-// Henter knapper som flytter kurven mot høyre og venstre
-let leftArrowBtn = document.getElementById("left")
-let rightArrowBtn = document.getElementById("right")
-
-// Setter en lytter til høyre- og venstre-pil-tastene til tastaturet
-leftArrowBtn.addEventListener('click', moveBasketLeft)
-rightArrowBtn.addEventListener('click', moveBasketRight)
-
 // Funksjon som kaller på funksjoner som flytter kurven når man bruker piltastene til tastaturet
 function control(e){
     if (e.key == "ArrowLeft") {
@@ -78,7 +66,15 @@ function control(e){
     } 
 }
 
-// Klasse ....
+// Henter knapper som flytter kurven mot høyre og venstre
+let leftArrowBtn = document.getElementById("left")
+let rightArrowBtn = document.getElementById("right")
+
+// Setter en lytter til høyre- og venstre-pil-tastene til tastaturet
+leftArrowBtn.addEventListener('click', moveBasketLeft)
+rightArrowBtn.addEventListener('click', moveBasketRight)
+
+// Klasse for food med variabler som repeteres
 class Food {
     constructor(bottom, left, filePathToPicture, isCheapFood) {
       this.bottom = bottom;
@@ -94,6 +90,8 @@ class Food {
       this.isCheapFood = isCheapFood /* boolean */
     }
 }
+
+var score = 0
 
 function createFood(){
     // Setter random lengde fra venstresiden
@@ -119,38 +117,52 @@ function createFood(){
     foods.appendChild(cheapFood.div)
     foods.appendChild(expensiveFood.div)
 
-    // food = cheapFood/expensiveFood??
+    // Funksjon for den dyre og den billige maten som faller
     function fallDownFood(food) {
+        // Sjekker om maten er innenfor kurven
         if (food.bottom < basketBottom + basketHeight && food.bottom > basketBottom && food.left > basketLeft - foodWidth && food.left < basketLeft + basketWidth) {
             foods.removeChild(food.div)
+            // Sjekker om maten er billig mat
             if(food.isCheapFood){
+                // Slutter å kalle på funksjonen
                 clearInterval(fallIntervalCheap)
                 score++
             } else {
+                // Lagrer verdiene i sessionStorage som hentes opp i gameover-HTML-dokumentet
                 sessionStorage.setItem("score", score)
                 sessionStorage.setItem("begrunnelse", "Du valgte dyr mat")
+                // Sendes til gameover-dokumentet
                 window.location.href = "gameover.html"
             }
            
         }
+        // Sjekker om maten treffer bakken
         if (food.bottom < basketBottom) {
+            // Sjekker om maten er den billige eller dyre
             if(food.isCheapFood){
+                // Dersom den billige maten treffer bakken lagres scoren og verdiene og spilleren sendes til gameover
                 sessionStorage.setItem("score", score)
                 sessionStorage.setItem("begrunnelse", "Du plukket ikke den billige maten")
                 window.location.href = "gameover.html"
             } else {
+                // Dersom den dyre maten treffer bakken forsvinner maten og spillet fortsetter
                 foods.removeChild(food.div)
                 clearInterval(fallIntervalExpensive)
             }
         }
+
+        // Endrer på food.bottom så maten havner 10px lenger ned neste runde
         food.bottom -= 10;
         food.div.style.bottom = food.bottom + 'px'
         food.div.style.left = food.left + 'px'
     }
     
-    var fallIntervalCheap = setInterval(fallDownFood, 100, cheapFood)
+    // setInterval kaller på funksjonen på spesifike intervaller 
+    var fallIntervalCheap = setInterval(fallDownFood, 100, cheapFood) // (funksjon, millisekunder, parameter den gjelder for)
     var fallIntervalExpensive = setInterval(fallDownFood, 100, expensiveFood)
-    setTimeout(createFood, 2000)
+
+    // setTimeout kaller på funksjonen etter 2000 millisekunder
+    setTimeout(createFood, 2000) 
     
 } 
 createFood()

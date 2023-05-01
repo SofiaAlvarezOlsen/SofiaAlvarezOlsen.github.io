@@ -71,7 +71,7 @@ main {
 }
 
 /*Responsivitet*/
-@media(max-width: 500px) {
+@media(max-width: 1000px) {
     .editable th,
     .editable td {
     text-align: left;

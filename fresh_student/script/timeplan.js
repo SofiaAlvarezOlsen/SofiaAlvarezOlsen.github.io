@@ -142,8 +142,10 @@ var editable = {
     }
 }
 
-let phoneSize
 
+// Responsivitet
+
+let phoneSize
 
 if (window.innerWidth < 500) {
     phoneSize = document.getElementById("phoneSize")
