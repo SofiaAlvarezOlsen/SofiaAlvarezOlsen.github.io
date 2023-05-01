@@ -25,8 +25,8 @@ console.log("gameWidth" +  gameWidth)
 console.log("gameHeight" +  gameHeight) */
 
 // Array for bilder av dyr og billig mat
-let filePathToPictureCheapFood = ["../bilder/pepsi.PNG", "../bilder/banan.png", "../bilder/norwegia.PNG", "../bilder/idun.PNG", "../bilder/oldelpaso.PNG", "../bilder/grandiosa.JPG", "../bilder/sørlandschips.PNG", "../bilder/ovnsbakt.PNG", "../bilder/oreo.PNG", "../bilder/agurk.PNG", "../bilder/torsk.PNG", "../bilder/gulrot.PNG", "../bilder/nordfjord.PNG", "../bilder/sopps.PNG", "../bilder/nidar.PNG"]
-let filePathToPictureExpensiveFood = ["../bilder/cola.PNG",  "../bilder/eple.PNG", "../bilder/jarlsberg.PNG", "../bilder/heinz.PNG", "../bilder/santamaria.PNG", "../bilder/bigone.PNG", "../bilder/maarud.PNG", "../bilder/stabburet.PNG", "../bilder/safari.PNG", "../bilder/paprika.PNG", "../bilder/laks.PNG", "../bilder/sukkererter.PNG", "../bilder/gilde.PNG", "../bilder/barilla.PNG", "../bilder/freia.PNG"]
+let filePathToPictureCheapFood = ["../bilder/pepsi.PNG", "../bilder/banan.png", "../bilder/norwegia.PNG", "../bilder/idun.PNG", "../bilder/oldelpaso.PNG", "../bilder/grandiosa.JPG", "../bilder/sørlandschips.PNG", "../bilder/ovnsbakt.PNG", "../bilder/oreo.PNG", "../bilder/agurk.PNG", "../bilder/torsk.PNG", "../bilder/nordfjord.PNG", "../bilder/sopps.PNG", "../bilder/nidar.PNG"]
+let filePathToPictureExpensiveFood = ["../bilder/cola.PNG",  "../bilder/eple.PNG", "../bilder/jarlsberg.PNG", "../bilder/heinz.PNG", "../bilder/santamaria.PNG", "../bilder/bigone.PNG", "../bilder/maarud.PNG", "../bilder/stabburet.PNG", "../bilder/safari.PNG", "../bilder/paprika.PNG", "../bilder/laks.PNG", "../bilder/gilde.PNG", "../bilder/barilla.PNG", "../bilder/freia.PNG"]
 
 // Hvis avstanden mellom kurven og vestre-veggen er større enn null skal kurven flyttes mot venstre
 var pixelsPrMove = 25
@@ -83,7 +83,7 @@ class Food {
 
       var bilde = document.createElement('img')
       bilde.setAttribute("src", filePathToPicture)
-      this.div = document.createElement('div');
+      this.div = document.createElement('div')
       this.div.setAttribute("class", "food")
       this.div.appendChild(bilde)
 

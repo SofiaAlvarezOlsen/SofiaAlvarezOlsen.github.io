@@ -1,44 +1,47 @@
-// lambda expression - funskjon uten navn som kalles når "DOMContentLoaded"
+// lambda expression - funskjon uten navn som kalles når "DOMContentLoaded" (som automatisk funksjon)
 window.addEventListener("DOMContentLoaded", () => {
     loadStoredValues()
     markDuplicateText()
+    // henter alle td-elementer og plasserer de i et array. 
+    // hver gang for-løkken kjøres puttes et og et element inni hver sin celle
+    // for hvert td element i html-dokumentet legges på en ondbleclick event som gjør td-elementet editerbart.
     for (let cell of document.querySelectorAll(".editable td")) {
-        cell.ondblclick = () => editable.edit(cell);
+        cell.ondblclick = () => editable.edit(cell)
     }
 }
 )
 
+// Laster opp lagrede verdier fra localStorage
 function loadStoredValues() {
-    if (localStorage.getItem("values") !== null) {
-
+    if (localStorage.getItem("tableData") !== null) {
         // JSON - måte å lagre data som er forståelig for mennesker og datamaskiner
         // parse - gjør om JSON til array (objekt)
-        let values = JSON.parse(localStorage.getItem("values"));
-        console.log("retrieved from storage " + values);
-        let cells = document.querySelectorAll(".editable td");
+        let tableData = JSON.parse(localStorage.getItem("tableData"))
+        let cells = document.querySelectorAll(".editable td")
         for (let i = 0; i < cells.length; i++) {
-            cells[i].innerHTML = values[i];
+            cells[i].innerHTML = tableData[i];
         }
     } else {
         console.log("storage is null")
     }
 }
 
+// Lagrer verdier i localStorage
 function saveStoredValues() {
-    let values = [];
+    let tableData = []
     for (let cell of document.querySelectorAll(".editable td")) {
         if (cell.innerHTML == null) {
-            values.push("");
+            tableData.push("");
         } else {
-            values.push(cell.innerHTML);
+            tableData.push(cell.innerHTML);
         }
 
     }
     // stringify - gjør om til JSON
-    localStorage.setItem("values", JSON.stringify(values))
-    console.log("json stored " + JSON.parse(localStorage.getItem("values")));
+    localStorage.setItem("tableData", JSON.stringify(tableData))
 }
 
+// Funksjon som markerer data som repreteres to eller flere ganger OG som gir farge på spesifike fag
 function markDuplicateText() {
     let cells = document.querySelectorAll(".editable td")
     for (let cell of cells) {
@@ -46,7 +49,7 @@ function markDuplicateText() {
             let count = 0;
             for (let otherCell of cells) {
                 if (cell.innerHTML == otherCell.innerHTML) {
-                    count++;
+                    count++
                 }
             }
             if (cell.innerHTML.toLowerCase() == "matte") {
@@ -62,10 +65,9 @@ function markDuplicateText() {
             } else if (cell.innerHTML.toLowerCase() == "informasjonsteknologi" || cell.innerHTML.toLowerCase() == "it") {
                 cell.classList.add("duplicate6")
             } else if (count > 1) {
-                cell.classList.add("duplicate");
-                console.log(cell.innerHTML)
+                cell.classList.add("duplicate")
             } else {
-                cell.classList.remove("duplicate");
+                cell.classList.remove("duplicate")
             }
         } else {
             cell.classList.remove("duplicate")
@@ -74,6 +76,7 @@ function markDuplicateText() {
             cell.classList.remove("duplicate3")
             cell.classList.remove("duplicate4")
             cell.classList.remove("duplicate5")
+            cell.classList.remove("duplicate6")
         }
     }
 }
