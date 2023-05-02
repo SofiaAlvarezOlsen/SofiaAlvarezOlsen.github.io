@@ -75,7 +75,7 @@ function startQuiz(){
 //Går gjennom spørsmålene
 let i=0
 function nextQuestion(){
-
+    checkPoints()
     //Henter spørsmålet
     let question = quiz[i].question
 
@@ -131,7 +131,6 @@ function nextQuestion(){
         checkAnswearBtn.classList.remove("hidden")
         nextBtn.classList.add("hidden")
     }
-    checkPoints()
 }
 
 let points = 0
