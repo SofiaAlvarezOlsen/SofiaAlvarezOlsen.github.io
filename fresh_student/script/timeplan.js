@@ -84,61 +84,61 @@ function markDuplicateText() {
 
 // objekt for tabellen
 var editable = {
-    // PROPERTIES
-    selected: null,  // current selected cell
-    value: "", // current selected cell value
+    selected: null,  // valgt celle
+    value: "", // verdien til cellen som er valgt
 
-    // "CONVERT" TO EDITABLE CELL
+    // Gjør cellen editerbar
     edit (cell) {
-        // REMOVE "DOUBLE CLICK TO EDIT"
-        cell.ondblclick = "";
+        // fjerner at man kan dobbelklikke for å editere
+        cell.ondblclick = ""
 
-        // EDITABLE CONTENT
-        cell.contentEditable = true;
-        cell.focus();
+        // gjør cellen editerbar
+        cell.contentEditable = true
+        cell.focus() // funksjon som legger cellen i fokus
 
         // "MARK" CURRENT SELECTED CELL
-        cell.classList.add("edit");
-        editable.selected = cell;
+        cell.classList.add("edit")
+        editable.selected = cell; // gir selected en verdi cell som markerer hvilken celle som for øyeblikket er i bruk
         editable.value = cell.innerHTML;
 
-        // PRESS ENTER/ESC OR CLICK OUTSIDE TO END EDIT
+        // gjør at man kan trykke enter/escape eller trykke utenfor for å avslutte editeringen
         // if(evt.key == "Enter"){editable.close("true") else {editable.close("false")}
-        window.addEventListener("click", editable.close);
+        window.addEventListener("click", editable.close)
         cell.onkeydown = (evt) => {
+            // enter blir true og escape blir false
             if (evt.key == "Enter" || evt.key == "Escape") {
-                editable.close(evt.key == "Enter" ? true : false);
-                return false;
+                editable.close(evt.key == "Enter" ? true : false)
+                return false
             }
-        };
+        }
     },
 
-    // END "EDIT MODE"
+    // avslutter editeringen
     close (evt) {
         if (evt.target != editable.selected) {
-            // CANCEL - RESTORE PREVIOUS VALUE
+            // kanselerer - gjennoppretter tidligere verdi
             if (evt === false) {
-                editable.selected.innerHTML = editable.value;
+                editable.selected.innerHTML = editable.value
             }
 
-            // REMOVE "EDITABLE"
-            window.getSelection().removeAllRanges(); 
-            editable.selected.contentEditable = false;
+            // fjerner "editerbar"
+            window.getSelection().removeAllRanges()
+            editable.selected.contentEditable = false
 
-            // RESTORE CLICK LISTENERS
-            window.removeEventListener("click", editable.close);
-            let cell = editable.selected;
-            cell.ondblclick = () => editable.edit(cell);
+            // gjenoppretter dobbeltklikk-lytter
+            window.removeEventListener("click", editable.close) // fjerner muligheten for å lukke når editable lukkes
+            let cell = editable.selected 
+            cell.ondblclick = () => editable.edit(cell)
 
-            // "UNMARK" CURRENT SELECTED CELL
-            editable.selected.classList.remove("edit");
-            editable.selected = null;
-            editable.value = "";
+            // fjerner markering/design på cellen
+            editable.selected.classList.remove("edit")
+            editable.selected = null
+            editable.value = ""
 
-            // DO WHATEVER YOU NEED
+            // kaller på funksjoner for localStorage og farger på tekst
             if (evt == true) {
-                markDuplicateText();
-                saveStoredValues();
+                markDuplicateText()
+                saveStoredValues()
             }
         }
     }
