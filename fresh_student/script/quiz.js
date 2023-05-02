@@ -125,7 +125,10 @@ function nextQuestion(){
         quizQOS.appendChild(labelEL)
 
     }
+    //neste spørsmål
     i = i+1
+
+    //sjekker om ikke er fler spørsmål
     if (i>=quiz.length){
         tryAgainBtn.classList.remove("hidden")
         checkAnswearBtn.classList.remove("hidden")
@@ -147,7 +150,6 @@ function checkPoints(){
             if(radioEls[i].value == "candy"){
                 //øker antall poeng
                 points++
-                console.log(points)
             }
         }
     }
@@ -164,7 +166,7 @@ function findPoints (){
     //legger til en klasse for å bedre utseende på nettsiden
     outcomeEl.classList.add("resAndCom")
   
-    //sjekket om et alternativ er trykket av
+    //sjekker om et alternativ er trykket av
     resultEL.innerHTML= `Du fikk ${points}/${quiz.length} poeng.`
 
     if ((points/quiz.length) >= 0.8){
