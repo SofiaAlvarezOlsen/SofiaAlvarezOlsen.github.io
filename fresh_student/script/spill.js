@@ -3,26 +3,18 @@ var game = document.querySelector(".game")
 var basket = document.querySelector(".basket")
 var foods = document.querySelector(".foods")
 
-//Henter style
+//Definerer style
 
 let foodWidth = 50
 let foodHeight = 50
 
-    /* analyserer verdien og returnerer et heltall */
+    /* henter verdier som analyseres og returnerer et heltall */
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"))
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"))
 let basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"))
 let basketHeight = parseInt(window.getComputedStyle(basket).getPropertyValue("height"))
 let gameWidth = parseInt(window.getComputedStyle(game).getPropertyValue("width"))
 let gameHeight = parseInt(window.getComputedStyle(game).getPropertyValue("height"))
-
-/* console.log("foodWidth" +  foodWidth)
-console.log("foodHeight" +  foodHeight)
-console.log("basketBottom" + basketBottom)
-console.log("basketWidth" +  basketWidth)
-console.log("basketHeight" +  basketHeight)
-console.log("gameWidth" +  gameWidth)
-console.log("gameHeight" +  gameHeight) */
 
 // Array for bilder av dyr og billig mat
 let filePathToPictureCheapFood = ["../bilder/pepsi.PNG", "../bilder/banan.png", "../bilder/norwegia.PNG", "../bilder/idun.PNG", "../bilder/oldelpaso.PNG", "../bilder/grandiosa.JPG", "../bilder/sørlandschips.PNG", "../bilder/ovnsbakt.PNG", "../bilder/oreo.PNG", "../bilder/agurk.PNG", "../bilder/torsk.PNG", "../bilder/nordfjord.PNG", "../bilder/sopps.PNG", "../bilder/nidar.PNG"]
@@ -32,10 +24,10 @@ let filePathToPictureExpensiveFood = ["../bilder/cola.PNG",  "../bilder/eple.PNG
 var pixelsPrMove = 25
 function moveBasketLeft() {
     if (basketLeft > 0) {
-        // Hvis avstanden mellom kurven og vestre-veggen er større enn "pixelsPrMove" skal kurven flyttes mot venstre "pixelsPrMove"
+        // Sjekker om det er rom for å flytte 25px
         if(basketLeft > pixelsPrMove)
             basketLeft -= pixelsPrMove
-        // Hvis avstanden mellom kurven og vestre-veggen er mindre enn "pixelsPrMove" skal kurven flyttes mot venstre så avstanden er 0
+        // Flyttes inntil veggen dersom det ikke er plass
         else
             basketLeft = 0
         basket.style.left = basketLeft + 'px'
@@ -46,10 +38,10 @@ function moveBasketLeft() {
 // Hvis avstanden mellom kurven og vestre-veggen er mindre enn spill-bredden minus bredden til kurven skal kurven flyttes mot høyre
 function moveBasketRight() {
     if (basketLeft < (gameWidth-basketWidth)) {
-        // Hvis avstanden mellom kurven og høyre-veggen er større enn "pixelsPrMove" skal kurven flyttes mot høyre "pixelsPrMove"
+        // Sjekker om det er rom for å flytte 25px
         if(basketLeft < ((gameWidth-basketWidth)-pixelsPrMove))
             basketLeft += pixelsPrMove
-        // Hvis avstanden mellom kurven og høyre-veggen er mindre enn "pixelsPrMove" skal kurven flyttes mot høyre så avstanden er 0
+        // Flyttes inntil veggen dersom det ikke er plass
         else
             basketLeft = (gameWidth-basketWidth)
         basket.style.left = basketLeft + 'px'
