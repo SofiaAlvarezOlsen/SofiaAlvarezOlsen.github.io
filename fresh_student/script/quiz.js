@@ -70,7 +70,6 @@ function startQuiz(){
     nextBtn.classList.remove("hidden")
     startBtn.classList.add("hidden")
     bigBoxStartEl.classList.add("hidden")
-    centerBtns.classList.remove("startQuiz")
 }
 
 //Går gjennom spørsmålene
@@ -94,7 +93,7 @@ function nextQuestion(){
     </article>
     `
     //Henter elementet alternativene skal skrives i
-    let questionEl = document.querySelector(`#question${i+1}`)
+    let quizQOS = document.querySelector(`#question${i+1}`)
 
     //Går gjennom alternativene
     for(let j = 0; j < options.length; j++){
@@ -125,7 +124,7 @@ function nextQuestion(){
         labelEL.innerHTML += options[j]
 
         //legger label elementet inni question elementet
-        questionEl.appendChild(labelEL)
+        quizQOS.appendChild(labelEL)
     }
     i = i+1
     if (i>=quiz.length){
@@ -141,13 +140,11 @@ let points = 0
 function checkPoints(){
     //henter radio-elemtene
     let radioEls = document.querySelectorAll('input[type="radio"]')
-    console.log(radioEls)
 
     //går gjennom alle radio-elementene
     for (let i = 0; i<radioEls.length; i++){
         //sjekker om et alternativ er krysset av
         if(radioEls[i].checked){
-            console.log(radioEls[i].value == "candy")
             if(radioEls[i].value == "candy"){
                 //øker antall poeng
                 points++
@@ -161,6 +158,7 @@ checkAnswearBtn.addEventListener('click', findPoints)
 
 //finner hvor mange poeng resultatene fører til
 function findPoints (){
+    
     //legger til en klasse for å bedre utseende på nettsiden
     outcomeEl.classList.add("resAndCom")
   
