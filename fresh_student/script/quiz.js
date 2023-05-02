@@ -71,10 +71,9 @@ function startQuiz(){
     startBtn.classList.add("hidden")
     bigBoxStartEl.classList.add("hidden")
 }
-
 let i=0
 function nextQuestion(){
-
+    checkPoints()
     //Henter spørsmålet
     let question = quiz[i].question
 
@@ -125,7 +124,6 @@ function nextQuestion(){
         //legger label elementet inni question elementet
         quizQOS.appendChild(labelEL)
 
-        checkPoints()
     }
     i = i+1
     if (i>=quiz.length){
@@ -149,11 +147,14 @@ function checkPoints(){
             if(radioEls[i].value == "candy"){
                 //øker antall poeng
                 points++
+                console.log(points)
             }
         }
     }
 }
 
+//Legger en lytter til knappen som sjekker poeng
+checkAnswearBtn.addEventListener('click', checkPoints)
 //Legger en lytter til knappen som sjekker svar
 checkAnswearBtn.addEventListener('click', findPoints)
 
