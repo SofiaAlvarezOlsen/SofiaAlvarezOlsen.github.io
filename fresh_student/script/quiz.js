@@ -72,10 +72,9 @@ function startQuiz(){
     bigBoxStartEl.classList.add("hidden")
 }
 
-//Går gjennom spørsmålene
 let i=0
 function nextQuestion(){
-    checkPoints()
+
     //Henter spørsmålet
     let question = quiz[i].question
 
@@ -91,6 +90,7 @@ function nextQuestion(){
     <h3>${question}</h3>
     </article>
     `
+
     //Henter elementet alternativene skal skrives i
     let quizQOS = document.querySelector(`#question${i+1}`)
 
@@ -124,6 +124,8 @@ function nextQuestion(){
 
         //legger label elementet inni question elementet
         quizQOS.appendChild(labelEL)
+
+        checkPoints()
     }
     i = i+1
     if (i>=quiz.length){
