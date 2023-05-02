@@ -128,7 +128,7 @@ function nextQuestion(){
     //neste spørsmål
     i = i+1
 
-    //sjekker om ikke er fler spørsmål
+    //sjekker om det ikke er fler spørsmål
     if (i>=quiz.length){
         tryAgainBtn.classList.remove("hidden")
         checkAnswearBtn.classList.remove("hidden")
@@ -180,6 +180,7 @@ function findPoints (){
     } 
 }
 
+//legger til en kytter
 tryAgainBtn.addEventListener('click', refresh)
 
 function refresh(){

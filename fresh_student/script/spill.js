@@ -8,7 +8,7 @@ var foods = document.querySelector(".foods")
 let foodWidth = 50
 let foodHeight = 50
 
-    /* henter verdier som analyseres og returnerer et heltall */
+/* henter verdier som analyseres og returnerer et heltall */
 let basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue("left"))
 let basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue("bottom"))
 let basketWidth = parseInt(window.getComputedStyle(basket).getPropertyValue("width"))
