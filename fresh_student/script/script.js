@@ -16,9 +16,14 @@ function showNav() {
 //henter elementer fra DOM
 let registrateBtn = document.getElementById("registrate")
 let thanksEl = document.getElementById("thanks")
+let mailInp = document.getElementById("mail")
 
 registrateBtn.addEventListener("click", email)
 
 function email(){
+  if (mailInp.value == ''){
+  }
+  else{
   thanksEl.innerHTML="Takk for at du registrerte deg!"
+  }
 }
