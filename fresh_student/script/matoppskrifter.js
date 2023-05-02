@@ -1,10 +1,9 @@
 // Hent hjerter fra DOM
 let heartEls = document.querySelectorAll(".fa-heart")
 heartEls.forEach(function(heartEl) {
-  
-heartEl.addEventListener("click", function() {
 
-  // Sjekk hvilken klasse hjertet har
+heartEl.addEventListener("click", function() {
+  // Sjekker hvilken klasse hjertet har
   if (heartEl.classList.contains("fa-regular")) {
       heartEl.classList.remove("fa-regular")
       heartEl.classList.add("fa-solid")
