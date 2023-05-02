@@ -1,15 +1,14 @@
-// lambda expression - funskjon uten navn som kalles når "DOMContentLoaded" (som automatisk funksjon)
+// funskjon som kalles når "DOMContentLoaded"
 window.addEventListener("DOMContentLoaded", () => {
     loadStoredValues()
     markDuplicateText()
-    // henter alle td-elementer og plasserer de i et array. 
-    // hver gang for-løkken kjøres puttes et og et element inni hver sin celle
     // for hvert td element i html-dokumentet legges på en ondbleclick event som gjør td-elementet editerbart.
     for (let cell of document.querySelectorAll(".editable td")) {
         cell.ondblclick = () => editable.edit(cell)
     }
 }
 )
+
 
 // Laster opp lagrede verdier fra localStorage
 function loadStoredValues() {
@@ -19,7 +18,7 @@ function loadStoredValues() {
         let tableData = JSON.parse(localStorage.getItem("tableData"))
         let cells = document.querySelectorAll(".editable td")
         for (let i = 0; i < cells.length; i++) {
-            cells[i].innerHTML = tableData[i];
+            cells[i].innerHTML = tableData[i]
         }
     } else {
         console.log("storage is null")
@@ -31,13 +30,13 @@ function saveStoredValues() {
     let tableData = []
     for (let cell of document.querySelectorAll(".editable td")) {
         if (cell.innerHTML == null) {
-            tableData.push("");
+            tableData.push("")
         } else {
-            tableData.push(cell.innerHTML);
+            tableData.push(cell.innerHTML)
         }
 
     }
-    // stringify - gjør om til JSON
+    // stringify / gjør om til JSON
     localStorage.setItem("tableData", JSON.stringify(tableData))
 }
 
@@ -46,7 +45,7 @@ function markDuplicateText() {
     let cells = document.querySelectorAll(".editable td")
     for (let cell of cells) {
         if (cell.innerHTML > "") {
-            let count = 0;
+            let count = 0
             for (let otherCell of cells) {
                 if (cell.innerHTML == otherCell.innerHTML) {
                     count++
@@ -83,28 +82,28 @@ function markDuplicateText() {
 
 // Kilde til inspirasjon for tabell: https://code-boxx.com/editable-html-table/
 
-// objekt - kolon brukes til å definere variabler 
+// objekt for tabellen
 var editable = {
-    // (B) PROPERTIES
+    // PROPERTIES
     selected: null,  // current selected cell
     value: "", // current selected cell value
 
-    // (C) "CONVERT" TO EDITABLE CELL
+    // "CONVERT" TO EDITABLE CELL
     edit (cell) {
-        // (C1) REMOVE "DOUBLE CLICK TO EDIT"
+        // REMOVE "DOUBLE CLICK TO EDIT"
         cell.ondblclick = "";
 
-        // (C2) EDITABLE CONTENT
+        // EDITABLE CONTENT
         cell.contentEditable = true;
         cell.focus();
 
-        // (C3) "MARK" CURRENT SELECTED CELL
+        // "MARK" CURRENT SELECTED CELL
         cell.classList.add("edit");
         editable.selected = cell;
         editable.value = cell.innerHTML;
 
-        // (C4) PRESS ENTER/ESC OR CLICK OUTSIDE TO END EDIT
-        // if(evt.key == "Enter"){editable.close("true"} else {editable.close("false")}
+        // PRESS ENTER/ESC OR CLICK OUTSIDE TO END EDIT
+        // if(evt.key == "Enter"){editable.close("true") else {editable.close("false")}
         window.addEventListener("click", editable.close);
         cell.onkeydown = (evt) => {
             if (evt.key == "Enter" || evt.key == "Escape") {
@@ -114,29 +113,29 @@ var editable = {
         };
     },
 
-    // (D) END "EDIT MODE"
+    // END "EDIT MODE"
     close (evt) {
         if (evt.target != editable.selected) {
-            // (D1) CANCEL - RESTORE PREVIOUS VALUE
+            // CANCEL - RESTORE PREVIOUS VALUE
             if (evt === false) {
                 editable.selected.innerHTML = editable.value;
             }
 
-            // (D2) REMOVE "EDITABLE"
-            window.getSelection().removeAllRanges();     //vet ikke :)
+            // REMOVE "EDITABLE"
+            window.getSelection().removeAllRanges(); 
             editable.selected.contentEditable = false;
 
-            // (D3) RESTORE CLICK LISTENERS
+            // RESTORE CLICK LISTENERS
             window.removeEventListener("click", editable.close);
             let cell = editable.selected;
             cell.ondblclick = () => editable.edit(cell);
 
-            // (D4) "UNMARK" CURRENT SELECTED CELL
+            // "UNMARK" CURRENT SELECTED CELL
             editable.selected.classList.remove("edit");
             editable.selected = null;
             editable.value = "";
 
-            // (D5) DO WHATEVER YOU NEED
+            // DO WHATEVER YOU NEED
             if (evt == true) {
                 markDuplicateText();
                 saveStoredValues();

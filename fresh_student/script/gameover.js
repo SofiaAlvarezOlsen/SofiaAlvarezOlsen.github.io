@@ -6,9 +6,3 @@ document.addEventListener("DOMContentLoaded", ()=> {
     document.getElementById("score").innerHTML = "Din score ble "+ score +"!"
     
 })
-/* 
-let trophyEl = document.getElementById("trophy")
-
-if (score>1){
-  trophyEl.className="fa-solid fa-trophy"
-} */
