@@ -115,8 +115,7 @@ function nextQuestion(){
         else{
             radioEl.value = "worm" //wrong
         }
-        checkPoints()
-        
+
         //Legger input-elementet med type radio i label elementet
         labelEL.appendChild(radioEl)
 
@@ -132,6 +131,7 @@ function nextQuestion(){
         checkAnswearBtn.classList.remove("hidden")
         nextBtn.classList.add("hidden")
     }
+    checkPoints()
 }
 
 let points = 0
