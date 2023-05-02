@@ -75,8 +75,7 @@ function startQuiz(){
 //Går gjennom spørsmålene
 let i=0
 function nextQuestion(){
-    checkPoints()
-    
+
     //Henter spørsmålet
     let question = quiz[i].question
 
@@ -95,7 +94,7 @@ function nextQuestion(){
     //Henter elementet alternativene skal skrives i
     let quizQOS = document.querySelector(`#question${i+1}`)
 
-    //Går gjennom alternativene
+    //Itererer gjennom alternativene
     for(let j = 0; j < options.length; j++){
 
         //lager label-element
@@ -116,7 +115,8 @@ function nextQuestion(){
         else{
             radioEl.value = "worm" //wrong
         }
-
+        checkPoints()
+        
         //Legger input-elementet med type radio i label elementet
         labelEL.appendChild(radioEl)
 
