@@ -75,7 +75,8 @@ function startQuiz(){
 //Går gjennom spørsmålene
 let i=0
 function nextQuestion(){
-
+    checkPoints()
+    
     //Henter spørsmålet
     let question = quiz[i].question
 
@@ -125,7 +126,6 @@ function nextQuestion(){
         //legger label elementet inni question elementet
         quizQOS.appendChild(labelEL)
     }
-    checkPoints()
     i = i+1
     if (i>=quiz.length){
         tryAgainBtn.classList.remove("hidden")
