@@ -96,7 +96,7 @@ var editable = {
         cell.contentEditable = true
         cell.focus() // funksjon som legger cellen i fokus
 
-        // "MARK" CURRENT SELECTED CELL
+        // markerer cellen som er i bruk
         cell.classList.add("edit")
         editable.selected = cell // en peker til cellen som er i bruk, slik at man kan slå av editering senere 
         editable.value = cell.innerHTML
@@ -107,6 +107,7 @@ var editable = {
             // enter blir true og escape blir false
             if (evt.key == "Enter" || evt.key == "Escape") {
                 editable.close(evt.key == "Enter" ? true : false)
+                return false
             }
         }
     },
