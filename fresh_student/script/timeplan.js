@@ -107,7 +107,6 @@ var editable = {
             // enter blir true og escape blir false
             if (evt.key == "Enter" || evt.key == "Escape") {
                 editable.close(evt.key == "Enter" ? true : false)
-                return false
             }
         }
     },
