@@ -84,10 +84,10 @@ function markDuplicateText() {
 
 // objekt for tabellen
 var editable = {
-    selected: null,  // valgt celle
-    value: "", // verdien til cellen som er valgt
+    selected: null,  // definerer valgt celle
+    value: "", // definerer verdien til cellen som er valgt
 
-    // Gjør cellen editerbar
+    // Funksjon som gjør cellen editerbar
     edit (cell) {
         // fjerner at man kan dobbelklikke for å editere
         cell.ondblclick = ""
@@ -98,32 +98,31 @@ var editable = {
 
         // "MARK" CURRENT SELECTED CELL
         cell.classList.add("edit")
-        editable.selected = cell; // gir selected en verdi cell som markerer hvilken celle som for øyeblikket er i bruk
-        editable.value = cell.innerHTML;
+        editable.selected = cell // en peker til cellen som er i bruk, slik at man kan slå av editering senere 
+        editable.value = cell.innerHTML
 
         // gjør at man kan trykke enter/escape eller trykke utenfor for å avslutte editeringen
-        // if(evt.key == "Enter"){editable.close("true") else {editable.close("false")}
         window.addEventListener("click", editable.close)
         cell.onkeydown = (evt) => {
             // enter blir true og escape blir false
             if (evt.key == "Enter" || evt.key == "Escape") {
                 editable.close(evt.key == "Enter" ? true : false)
-                return false
             }
         }
     },
 
     // avslutter editeringen
     close (evt) {
+        // sammenlikner stedet som klikkes på
         if (evt.target != editable.selected) {
-            // kanselerer - gjennoppretter tidligere verdi
+            // kanselerer - gjenoppretter tidligere verdi
             if (evt === false) {
                 editable.selected.innerHTML = editable.value
             }
 
             // fjerner "editerbar"
-            window.getSelection().removeAllRanges()
-            editable.selected.contentEditable = false
+            window.getSelection().removeAllRanges() // fjerner det som er valgt 
+            editable.selected.contentEditable = false // endrer kode så det ikke er editerbart
 
             // gjenoppretter dobbeltklikk-lytter
             window.removeEventListener("click", editable.close) // fjerner muligheten for å lukke når editable lukkes
