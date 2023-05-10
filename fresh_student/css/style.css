@@ -138,6 +138,10 @@ footer li a:hover{
   box-shadow: rgb(129, 123, 123) 2px 1px 1px;
 }
 
+#mail {
+  color: black;
+}
+
 .footerHeading{
   font-size: 20px;
   margin: 5px 0px;

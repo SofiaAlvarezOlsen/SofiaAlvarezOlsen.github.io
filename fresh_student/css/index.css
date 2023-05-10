@@ -71,15 +71,20 @@ img {
       
    }
     .info_box{
-      margin-bottom: 0px;
+      width: 90%;
+      margin: 30px;
+    }
+    .quiz_box{
+      margin: 30px;
     }
     }
+    
 @media(max-width: 900px) {
     .container {
       flex-direction: column;
     }
     .index_box{
-      width: 70%;
+      width: 90%;
     }
 }
 

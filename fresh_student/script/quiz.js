@@ -105,7 +105,7 @@ function nextQuestion(){
         //setter typen til input elementet til radio
         radioEl.type = "radio"
 
-        //Sørger for at alle alternativene til spørsmålet er i samme gruppe
+        //Sørger for at alle alternativene til spørsmålet er i samme gruppe slik at man ikke kan velge fler alternativer
         radioEl.name = `q${i + 1}`
 
         if (options[j] == solution){
@@ -121,7 +121,7 @@ function nextQuestion(){
         //Skriver alternativene til HTML
         labelEL.innerHTML += options[j]
 
-        //legger label elementet inni question elementet
+        //legger label elementet inni quizQOS elementet
         quizQOS.appendChild(labelEL)
 
     }
@@ -140,7 +140,7 @@ let points = 0
 
 //sjekker antall riktige poeng
 function checkPoints(){
-    //henter radio-elemtene
+    //henter input med type radio
     let radioEls = document.querySelectorAll('input[type="radio"]')
 
     //går gjennom alle radio-elementene
